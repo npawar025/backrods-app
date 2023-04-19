@@ -9,27 +9,28 @@ const Tours = () => {
 
       <div className="section-center featured-center">
         {tours.map((tour) => {
-          const { ...tours } = tour;
+          const { image, id, date, title, info, location, duration, price } =
+            tour;
           return (
-            <article key={tour.id} className="tour-card">
+            <article key={id} className="tour-card">
               <div className="tour-img-container">
-                <img src={tour.image} className="tour-img" alt="" />
-                <p className="tour-date">{tour.date}</p>
+                <img src={image} className="tour-img" alt="" />
+                <p className="tour-date">{date}</p>
               </div>
               <div className="tour-info">
                 <div className="tour-title">
-                  <h4>{tour.title}</h4>
+                  <h4>{title}</h4>
                 </div>
-                <p>{tour.info}</p>
+                <p>{info}</p>
                 <div className="tour-footer">
                   <p>
                     <span>
                       <i className="fas fa-map"></i>
                     </span>{" "}
-                    {tour.location}
+                    {location}
                   </p>
-                  <p>{tour.duration} days</p>
-                  <p>{tour.price}</p>
+                  <p>{duration} days</p>
+                  <p>{price}</p>
                 </div>
               </div>
             </article>
